@@ -1,0 +1,8 @@
+com/ipn/escom/wad/dao/CarreraDAO.class
+com/ipn/escom/wad/dao/AlumnoDAO.class
+com/ipn/escom/wad/util/Prueba.class
+com/ipn/escom/wad/model/Carrera.class
+com/ipn/escom/wad/dao/AlumnoDAOImpl.class
+com/ipn/escom/wad/dao/CarreraDAOImpl.class
+com/ipn/escom/wad/conexion/ConnectionManager.class
+com/ipn/escom/wad/model/Alumno.class
