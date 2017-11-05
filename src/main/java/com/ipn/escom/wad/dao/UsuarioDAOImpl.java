@@ -15,6 +15,7 @@ import org.apache.log4j.Logger;
  */
 public class UsuarioDAOImpl implements UsuarioDAO {
 
+    //TODO CREAR READ_USUARIO_BY_CORREO
     final static Logger log = Logger.getLogger(UsuarioDAOImpl.class);
 
     private static final String READ_USUARIO_BY_ID = "SELECT * FROM Usuario WHERE id=?";
@@ -45,8 +46,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
             while (rs.next()) {
                 entity.setId(rs.getLong("id"));
                 entity.setCorreo(rs.getString("correo"));
-                entity.setCorreo(rs.getString("password"));
-                entity.setId(rs.getLong("idCarrera"));
+                entity.setPassword(rs.getString("password"));
             }
 
         } catch (SQLException sQLException) {

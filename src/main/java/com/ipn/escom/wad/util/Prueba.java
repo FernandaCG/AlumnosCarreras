@@ -2,6 +2,7 @@ package com.ipn.escom.wad.util;
 
 import com.ipn.escom.wad.conexion.ConnectionManager;
 import com.ipn.escom.wad.dao.AlumnoDAOImpl;
+import com.ipn.escom.wad.dao.UsuarioDAOImpl;
 import com.ipn.escom.wad.model.Alumno;
 import java.util.List;
 
@@ -15,30 +16,33 @@ public class Prueba {
         ConnectionManager conn = new ConnectionManager();
         Alumno entity = new Alumno();
         AlumnoDAOImpl alumnoDAOImpl = new AlumnoDAOImpl();
+        
+        UsuarioDAOImpl usuario = new UsuarioDAOImpl();
+        System.out.println(usuario.readById(1));
 
-        //createAlumno
-        entity.setId(7);
-        entity.setNombre("Cesar11");
-        entity.setPaterno("Hernandez");
-        entity.setIdCarrera(1);
-        alumnoDAOImpl.create(entity);
-
-        //selectAll
-        List<Alumno> alumnos = alumnoDAOImpl.readAll();
-        System.out.println(alumnos);
-
-        //deleteAlumno
-        alumnoDAOImpl.delete(6);
+//        //createAlumno
+//        entity.setId(7);
+//        entity.setNombre("Cesar11");
+//        entity.setPaterno("Hernandez");
+//        entity.setIdCarrera(1);
+//        alumnoDAOImpl.create(entity);
+//
+//        //selectAll
+//        List<Alumno> alumnos = alumnoDAOImpl.readAll();
+//        System.out.println(alumnos);
+//
+//        //deleteAlumno
+//        alumnoDAOImpl.delete(6);
 
         //updatealumno
-        entity.setId(7);
-        entity.setId(8);
-        entity.setNombre("Erick");
-        entity.setPaterno("Lopez");
-        entity.setIdCarrera(1);
-        alumnoDAOImpl.update(entity);
+//        entity.setId(7);
+//        entity.setId(8);
+//        entity.setNombre("Erick");
+//        entity.setPaterno("Lopez");
+//        entity.setIdCarrera(1);
+//        alumnoDAOImpl.update(entity);
 
         //selectById
-        System.out.println(alumnoDAOImpl.readById(4));
+        //System.out.println(alumnoDAOImpl.readById(4));
     }
 }
