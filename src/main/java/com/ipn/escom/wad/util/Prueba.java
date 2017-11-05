@@ -29,7 +29,7 @@ public class Prueba {
 //
 //        //selectAll
 //        List<Alumno> alumnos = alumnoDAOImpl.readAll();
-//        System.out.println(alumnos);
+        //System.out.println(alumnos);
 //
 //        //deleteAlumno
 //        alumnoDAOImpl.delete(6);

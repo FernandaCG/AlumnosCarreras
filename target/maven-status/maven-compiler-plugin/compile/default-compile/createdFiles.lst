@@ -1,12 +1,11 @@
-com/ipn/escom/wad/dao/UsuarioDAOImpl.class
 com/ipn/escom/wad/dao/UsuarioDAO.class
-com/ipn/escom/wad/service/UsuarioLogin.class
-com/ipn/escom/wad/dao/CarreraDAO.class
-com/ipn/escom/wad/dao/AlumnoDAO.class
 com/ipn/escom/wad/util/Prueba.class
 com/ipn/escom/wad/model/Carrera.class
+com/ipn/escom/wad/dao/CarreraDAOImpl.class
+com/ipn/escom/wad/dao/UsuarioDAOImpl.class
+com/ipn/escom/wad/dao/CarreraDAO.class
+com/ipn/escom/wad/dao/AlumnoDAO.class
 com/ipn/escom/wad/model/Usuario.class
 com/ipn/escom/wad/dao/AlumnoDAOImpl.class
-com/ipn/escom/wad/dao/CarreraDAOImpl.class
 com/ipn/escom/wad/conexion/ConnectionManager.class
 com/ipn/escom/wad/model/Alumno.class
