@@ -8,52 +8,68 @@ import java.io.Serializable;
  */
 public class Usuario implements Serializable {
 
-    private long id;
-    private String correo;
-    private String password;
-    
-    public Usuario() {
-    
-    }
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
-    public Usuario(long id, String correo, String password) {
-        this.id = id;
-        this.correo = correo;
-        this.password = password;
-    }
+	private long id;
+	private String correo;
+	private String password;
+	private String rol;
 
-    public Usuario(String correo, String password) {
-        this.correo = correo;
-        this.password = password;
-    }
+	public Usuario() {
 
-    public long getId() {
-        return id;
-    }
+	}
 
-    public void setId(long id) {
-        this.id = id;
-    }
+	public Usuario(long id, String correo, String password, String rol) {
+		this.id = id;
+		this.correo = correo;
+		this.password = password;
+		this.rol = rol;
+	}
 
-    public String getCorreo() {
-        return correo;
-    }
+	public Usuario(String correo, String password, String rol) {
+		this.correo = correo;
+		this.password = password;
+		this.rol = rol;
+	}
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
+	public long getId() {
+		return id;
+	}
 
-    public String getPassword() {
-        return password;
-    }
+	public void setId(long id) {
+		this.id = id;
+	}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+	public String getCorreo() {
+		return correo;
+	}
 
-    @Override
-    public String toString() {
-        return "Usuario{" + "id=" + id + ", correo=" + correo + ", password=" + password + '}';
-    }
+	public void setCorreo(String correo) {
+		this.correo = correo;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getRol() {
+		return rol;
+	}
+
+	public void setRol(String rol) {
+		this.rol = rol;
+	}
+
+	@Override
+	public String toString() {
+		return "Usuario [id=" + id + ", correo=" + correo + ", password=" + password + ", rol=" + rol + "]";
+	}
 
 }
