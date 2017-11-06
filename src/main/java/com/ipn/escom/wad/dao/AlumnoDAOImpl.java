@@ -22,7 +22,7 @@ public class AlumnoDAOImpl implements AlumnoDAO {
     private static final String CREATE_ALUMNO = "INSERT INTO Alumnos(nombre, paterno, idCarrera) VALUES (?, ?, ?)";
     private static final String READ_ALL_ALUMNOS = "SELECT * FROM Alumnos";
     private static final String READ_ALUMNO_BY_ID = "SELECT * FROM Alumnos WHERE id=?";
-    private static final String UPDATE_ALUMNO = "UPDATE Alumnos SET nombre =?, paterno =?, idCarrera =? WHERE id=?";
+    private static final String UPDATE_ALUMNO = "UPDATE Alumnos SET nombre=?, paterno=?, idCarrera=? WHERE id=?";
     private static final String DELETE_ALUMNO = "DELETE FROM Alumnos WHERE id=?";
     private final ConnectionManager connectionManager;
     private Statement statement;
@@ -30,6 +30,7 @@ public class AlumnoDAOImpl implements AlumnoDAO {
     private ResultSet rs;
     private PreparedStatement ps;
 
+    private Alumno alumno;
     private final List<Alumno> alumnosList;
 
     public AlumnoDAOImpl() {
@@ -41,11 +42,11 @@ public class AlumnoDAOImpl implements AlumnoDAO {
     public void create(Alumno entity) {
         conn = connectionManager.connect();
         try {
-
             ps = conn.prepareStatement(CREATE_ALUMNO);
             ps.setString(1, entity.getNombre());
             ps.setString(2, entity.getPaterno());
             ps.setLong(3, entity.getIdCarrera());
+
             ps.executeUpdate();
         } catch (SQLException sQLException) {
             log.fatal("sqlException" + sQLException);
@@ -62,12 +63,13 @@ public class AlumnoDAOImpl implements AlumnoDAO {
             rs = statement.executeQuery(READ_ALL_ALUMNOS);
 
             while (rs.next()) {
-                Alumno alumno = new Alumno();
+                alumno = new Alumno();
+
                 alumno.setId(rs.getInt("id"));
                 alumno.setNombre(rs.getString("nombre"));
                 alumno.setPaterno(rs.getString("paterno"));
                 alumno.setIdCarrera(rs.getLong("idCarrera"));
-                System.out.println(alumnosList);
+
                 alumnosList.add(alumno);
             }
 
@@ -75,31 +77,31 @@ public class AlumnoDAOImpl implements AlumnoDAO {
             log.fatal("sqlException" + sQLException);
         }
 
-        log.info("Está es la lista: " + alumnosList);
-
         return alumnosList;
     }
 
     @Override
     public Alumno readById(long alumnoId) {
-        Alumno entity = new Alumno();
+        alumno = new Alumno();
+
         try {
             conn = connectionManager.connect();
             ps = conn.prepareStatement(READ_ALUMNO_BY_ID);
             ps.setLong(1, alumnoId);
             rs = ps.executeQuery();
+
             while (rs.next()) {
-                entity.setId(rs.getLong("id"));
-                entity.setNombre(rs.getString("nombre"));
-                entity.setPaterno(rs.getString("paterno"));
-                entity.setIdCarrera(rs.getLong("idCarrera"));
+                alumno.setId(rs.getLong("id"));
+                alumno.setNombre(rs.getString("nombre"));
+                alumno.setPaterno(rs.getString("paterno"));
+                alumno.setIdCarrera(rs.getLong("idCarrera"));
             }
 
         } catch (SQLException sQLException) {
             log.fatal("sqlException" + sQLException);
         }
-        log.info("Alumno: " + entity);
-        return entity;
+
+        return alumno;
     }
 
     @Override
@@ -111,8 +113,8 @@ public class AlumnoDAOImpl implements AlumnoDAO {
             ps.setString(2, entity.getPaterno());
             ps.setLong(3, entity.getIdCarrera());
             ps.setLong(4, entity.getId());
+            
             ps.executeUpdate();
-
         } catch (SQLException sQLException) {
             log.fatal("sqlException" + sQLException);
         }
@@ -126,10 +128,12 @@ public class AlumnoDAOImpl implements AlumnoDAO {
         try {
             ps = conn.prepareStatement(DELETE_ALUMNO);
             ps.setLong(1, alumnoId);
+            
             ps.executeUpdate();
         } catch (SQLException sQLException) {
             log.fatal("sqlException" + sQLException);
         }
+
         log.info("Alumno eliminado");
     }
 }

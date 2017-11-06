@@ -8,7 +8,12 @@ import java.io.Serializable;
  */
 public class Carrera implements Serializable {
 
-    private Long idCarrera;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private Long idCarrera;
     private String nombreCarrera;
 
     public Carrera() {

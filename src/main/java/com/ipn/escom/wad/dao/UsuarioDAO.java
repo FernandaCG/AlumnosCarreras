@@ -11,8 +11,8 @@ public interface UsuarioDAO {
     public void create(Usuario entity);
 
     public Usuario readById(long usuarioId);
-
-    public Usuario readByCorreo(String correo);
+    
+    public Usuario readValidUsers(String mail, String password);
 
     public void update(Usuario entity);
 

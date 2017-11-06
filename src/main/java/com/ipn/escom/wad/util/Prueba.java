@@ -4,7 +4,7 @@ import com.ipn.escom.wad.conexion.ConnectionManager;
 import com.ipn.escom.wad.dao.AlumnoDAOImpl;
 import com.ipn.escom.wad.dao.UsuarioDAOImpl;
 import com.ipn.escom.wad.model.Alumno;
-import java.util.List;
+import com.ipn.escom.wad.model.Usuario;
 
 /**
  *
@@ -16,9 +16,13 @@ public class Prueba {
         ConnectionManager conn = new ConnectionManager();
         Alumno entity = new Alumno();
         AlumnoDAOImpl alumnoDAOImpl = new AlumnoDAOImpl();
+        UsuarioDAOImpl usuarioDAOImpl = new UsuarioDAOImpl();
         
-        UsuarioDAOImpl usuario = new UsuarioDAOImpl();
-        System.out.println(usuario.readById(1));
+        ConnectionManager connectionManager = new ConnectionManager();
+        connectionManager.connect();
+//        
+//        UsuarioDAOImpl usuario = new UsuarioDAOImpl();
+//        System.out.println(usuario.readById(1));
 
 //        //createAlumno
 //        entity.setId(7);
@@ -30,6 +34,8 @@ public class Prueba {
 //        //selectAll
 //        List<Alumno> alumnos = alumnoDAOImpl.readAll();
         //System.out.println(alumnos);
+        Usuario usuario = usuarioDAOImpl.readValidUsers("cesar.je.lo@gmail.com", "admin");
+        System.out.println(usuario);
 //
 //        //deleteAlumno
 //        alumnoDAOImpl.delete(6);

@@ -6,9 +6,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-        <title>JSP Page</title>
+        <title>Login</title>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -49,7 +49,7 @@
         <!--TODO CAMBIAR LINK DE BOOTSTRAP-->
 
         <div class="container">
-            <form action="../UsuarioLogin" method="post">
+            <form action="LoginService" method="post">
                 <div class="form-group" align="center">
                     <img class="img-circle" id="img_logo" src="http://bootsnipp.com/img/logo.jpg">
                     <!--TODO CHANGE IMAGE-->
@@ -60,12 +60,12 @@
                 <div class="form-group">
                     <i class="material-icons">&#xE60E;</i>
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required> 
+                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email" required> 
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required> VALIDAR INPUTS
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" required> VALIDAR INPUTS
                 </div>
                 <div class="form-group">
                     <div class="form-check">
@@ -82,30 +82,9 @@
             </form>
         </div>
         <!--TODO HACER UN FOOTER-->
-
-        <!--EJEMPLO JSTL TABLA-->
-        <!--                    <div class="container">
-                                <table class ="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Id</th>
-                                            <th>Nombre</th>
-                                            <th>Apellido Paterno</th>
-                                            <th>Carrera</th>
-                                            <th>Servicios</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-        <c:forEach items="${listaAlumnos}" var="alumno">
-            <tr>
-                <td>${alumno.id}</td>
-               <td>${alumno.nombre}</td>
-                <td>${alumno.paterno}</td>
-                <td>${alumno.idCarrera}</td>
-            </tr>
-        </c:forEach>
-    <tbody>
-</table>
-</div>-->
+        <footer class="footer">
+            <div class="container">
+                <span class="text-muted">Footer</span>
+            </div>
     </body>
 </html>
