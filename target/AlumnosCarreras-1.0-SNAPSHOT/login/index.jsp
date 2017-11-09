@@ -52,7 +52,7 @@
             <form action="LoginService" method="post">
                 <div class="form-group" align="center">
                     <img class="img-circle" id="img_logo" src="http://bootsnipp.com/img/logo.jpg">
-                    <!--TODO CHANGE IMAGE-->
+                     <img src="../img/pieces.jpg" alt="pieces"> 
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                     </button>
@@ -81,10 +81,11 @@
                 </div>
             </form>
         </div>
-        <!--TODO HACER UN FOOTER-->
+
         <footer class="footer">
             <div class="container">
                 <span class="text-muted">Footer</span>
             </div>
+        </footer>
     </body>
 </html>

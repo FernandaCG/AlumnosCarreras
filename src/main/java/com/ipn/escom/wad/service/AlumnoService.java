@@ -1,7 +1,8 @@
-package com.ipn.escom.wad.service;
+    package com.ipn.escom.wad.service;
 
 import com.ipn.escom.wad.dao.AlumnoDAOImpl;
 import java.io.IOException;
+import java.sql.SQLException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +15,7 @@ import org.apache.log4j.Logger;
  *
  * @author fernanda
  */
+    /*Llamar al Servlet en lugar del JSP*/
 @WebServlet(name = "AlumnoService", urlPatterns = {"/AlumnoService"})
 public class AlumnoService extends HttpServlet {
 
@@ -29,12 +31,9 @@ public class AlumnoService extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        request.setAttribute("listaAlumnos", alumnoDAOImpl.readAll());
-        System.out.println(alumnoDAOImpl.readAll());
-        RequestDispatcher view = getServletContext().getRequestDispatcher("/gestionAlumno/");
+        request.setAttribute("lista", alumnoDAOImpl.readAll());
+        RequestDispatcher view = getServletContext().getRequestDispatcher("/gestionAlumno/index.jsp");
         view.forward(request, response);
-        
     }
 
     @Override
