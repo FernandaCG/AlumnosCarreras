@@ -8,6 +8,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+         <!--<link rel="stylesheet" href="css/bootstrap.min.css" >-->
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
         <title>Login</title>
     </head>
     <body>
@@ -52,12 +57,13 @@
             <form action="LoginService" method="post">
                 <div class="form-group" align="center">
                     <img class="img-circle" id="img_logo" src="http://bootsnipp.com/img/logo.jpg">
-                     <img src="../img/pieces.jpg" alt="pieces"> 
+                    <img src="../img/pieces.jpg" alt="pieces"> 
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                     </button>
                 </div>
                 <div class="form-group">
+                    <!-- TODO CAMBIAR ICONO -->
                     <i class="material-icons">&#xE60E;</i>
                     <label for="exampleInputEmail1">Email address</label>
                     <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email" required> 
@@ -65,7 +71,8 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" required> VALIDAR INPUTS
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" required> 
+                    <!--TODO VALIDAR INPUTS -->
                 </div>
                 <div class="form-group">
                     <div class="form-check">
@@ -87,5 +94,6 @@
                 <span class="text-muted">Footer</span>
             </div>
         </footer>
+        
     </body>
 </html>

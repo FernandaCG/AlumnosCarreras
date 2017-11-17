@@ -15,7 +15,6 @@ import org.apache.log4j.Logger;
  *
  * @author fernanda
  */
-    /*Llamar al Servlet en lugar del JSP*/
 @WebServlet(name = "AlumnoService", urlPatterns = {"/AlumnoService"})
 public class AlumnoService extends HttpServlet {
 
@@ -35,7 +34,6 @@ public class AlumnoService extends HttpServlet {
         RequestDispatcher view = getServletContext().getRequestDispatcher("/gestionAlumno/index.jsp");
         view.forward(request, response);
     }
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
