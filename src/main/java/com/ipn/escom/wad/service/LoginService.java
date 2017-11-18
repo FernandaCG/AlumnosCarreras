@@ -43,7 +43,8 @@ public class LoginService extends HttpServlet {
         usuarioDAOImpl = new UsuarioDAOImpl();
         usuario = usuarioDAOImpl.readValidUsers(email, password);
 
-        if (usuario != null) {
+        if (usuario.getId() != 0) {
+            System.out.println("USUARIO_LOGIN"+usuario);
             switch (usuario.getRol()) {
                 case "admin":
                     response.sendRedirect("../AlumnoService");
@@ -54,7 +55,7 @@ public class LoginService extends HttpServlet {
                     break;
             }
         } else {
-            response.sendRedirect("../home/index.jsp");
+            response.sendRedirect("../login/error.jsp");
         }
     }
 

@@ -5,10 +5,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-         <!--<link rel="stylesheet" href="css/bootstrap.min.css" >-->
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">-->
+        <link rel="stylesheet" href="static/css/bootstrap.min.css"/>
 
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
@@ -51,13 +50,13 @@
                 </form>
             </div>
         </nav>
-        <!--TODO CAMBIAR LINK DE BOOTSTRAP-->
 
         <div class="container">
             <form action="LoginService" method="post">
                 <div class="form-group" align="center">
                     <img class="img-circle" id="img_logo" src="http://bootsnipp.com/img/logo.jpg">
-                    <img src="../img/pieces.jpg" alt="pieces"> 
+                    <!--<img src="../src/main/webapp/static/img/pieces.jpg" alt="pieces"/>-->
+                    <img src='pieces.jpg'  width=180 height=214>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                     </button>
@@ -66,13 +65,12 @@
                     <!-- TODO CAMBIAR ICONO -->
                     <i class="material-icons">&#xE60E;</i>
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email" required> 
+                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required> 
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" required> 
-                    <!--TODO VALIDAR INPUTS -->
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" pattern="[A-Za-z0-9!?-]{5,10}" required>
                 </div>
                 <div class="form-group">
                     <div class="form-check">
@@ -94,6 +92,6 @@
                 <span class="text-muted">Footer</span>
             </div>
         </footer>
-        
+
     </body>
 </html>
