@@ -18,13 +18,8 @@ import org.apache.log4j.Logger;
 @WebServlet(name = "AlumnoService", urlPatterns = {"/AlumnoService"})
 public class AlumnoService extends HttpServlet {
 
-    /**
-     *
-     */
     private static final long serialVersionUID = 1L;
-
     final static Logger log = Logger.getLogger(LoginService.class);
-
     AlumnoDAOImpl alumnoDAOImpl = new AlumnoDAOImpl();
 
     @Override

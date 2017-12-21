@@ -24,12 +24,12 @@
                 <tbody> 
                 
                     <c:forEach items="${lista}" var="alumno">
-                        <System.out.println()>
                         <tr>
                             <td>${alumno.id}</td>
                             <td>${alumno.nombre}</td>
                             <td>${alumno.paterno}</td>
                             <td>${alumno.idCarrera}</td>
+                            <td><a href="#">Editar</a><a href="#"> Eliminar</a></td>
                         </tr>
                     </c:forEach>
                 <tbody>
