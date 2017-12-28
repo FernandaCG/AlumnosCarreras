@@ -1,5 +1,6 @@
-    package com.ipn.escom.wad.service;
+package com.ipn.escom.wad.service;
 
+import com.ipn.escom.wad.dao.AlumnoDAO;
 import com.ipn.escom.wad.dao.AlumnoDAOImpl;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -25,10 +26,27 @@ public class AlumnoService extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.setAttribute("lista", alumnoDAOImpl.readAll());
-        RequestDispatcher view = getServletContext().getRequestDispatcher("/gestionAlumno/index.jsp");
-        view.forward(request, response);
+        String operacion=request.getParameter("operacion");
+        int parametro = Integer.parseInt(request.getParameter("id"));
+
+        switch (operacion) {
+            case "Mostrar":
+                request.setAttribute("lista", alumnoDAOImpl.readAll());
+                RequestDispatcher view = getServletContext().getRequestDispatcher("/gestionAlumno/index.jsp");
+                view.forward(request, response);
+                break;
+            case "Actualizar":
+
+                break;
+            case "Eliminar":
+                AlumnoDAOImpl alumno = new AlumnoDAOImpl();
+                alumno.delete(parametro);
+                response.sendRedirect("AlumnoService?operacion=Mostrar&id=0");
+                break;
+        }
+
     }
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

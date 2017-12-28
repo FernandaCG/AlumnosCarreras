@@ -47,9 +47,8 @@ public class LoginService extends HttpServlet {
             System.out.println("USUARIO_LOGIN"+usuario);
             switch (usuario.getRol()) {
                 case "admin":
-                    response.sendRedirect("../AlumnoService");
+                    response.sendRedirect("../AlumnoService?operacion=Mostrar&id=0");
                     break;
-
                 default:
                     response.sendRedirect("../home/index.jsp");
                     break;

@@ -9,7 +9,7 @@
         <title>Gestión Alumnos</title>
     </head>
     <body>
-        <button type="button"><a href="login/index.jsp">Regresar</a></button>
+        <button type="button"><a href="../login/index.jsp">Regresar</a></button>
         <div class="container">
             <table class ="table table-striped">
                 <thead>
@@ -22,14 +22,21 @@
                     </tr>
                 </thead>
                 <tbody> 
-                
+
                     <c:forEach items="${lista}" var="alumno">
                         <tr>
                             <td>${alumno.id}</td>
                             <td>${alumno.nombre}</td>
                             <td>${alumno.paterno}</td>
                             <td>${alumno.idCarrera}</td>
-                            <td><a href="#">Editar</a><a href="#"> Eliminar</a></td>
+                            <td>
+                                <a href="AlumnoService?id=${alumno.id}&operacion=Actualizar">
+                                    Actualizar
+                                </a>
+                                <a href="AlumnoService?id=${alumno.id}&operacion=Eliminar">
+                                    Eliminar
+                                </a>
+                            </td>
                         </tr>
                     </c:forEach>
                 <tbody>
