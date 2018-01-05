@@ -4,20 +4,23 @@
     Author     : fernanda
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+       <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
         <title>Modificar Alumno</title>
     </head>
     <body>
-        <form action="ServletAlumno" method="get">
-            <input type="text" name="id">
-            <input type="text" name="nombre">
-            <input type="text" name="paterno">
-            <input type="text" name="idCarrera">
+        <fieldset>
+        <form action="AlumnoService?operacion=Mostrar" method="get">
+            <input type="text" name="id"value=" <c:out value="${alumno.id}"/>"/>
+            <input type="text" name="nombre" value="<c:out value="${alumno.nombre}"/>"/>
+            <input type="text" name="paterno" value="<c:out value="${alumno.paterno}"/>"/>
+            <input type="text" name="idCarrera" value="<c:out value="${alumno.idCarrera}"/>"/>
             <input type="submit" value="Actualizar">
         </form>
+        </fieldset>
     </body>
 </html>
