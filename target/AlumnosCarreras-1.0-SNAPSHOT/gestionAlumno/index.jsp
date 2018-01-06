@@ -9,7 +9,7 @@
         <title>Gestión Alumnos</title>
     </head>
     <body>
-        <button type="button"><a href="../login/index.jsp">Regresar</a></button>
+        <button type="button"><a href="login/index.jsp">Regresar</a></button>
         <div class="container">
             <table class ="table table-striped">
                 <thead>
@@ -41,6 +41,9 @@
                     </c:forEach>
                 <tbody>
             </table>
+            <a href="AlumnoService?operacion=Agregar">
+                                    Agregar
+                                </a>
         </div>
 
     </body>

@@ -9,18 +9,21 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-       <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+        <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
         <title>Modificar Alumno</title>
     </head>
     <body>
-        <fieldset>
-        <form action="AlumnoService?operacion=Mostrar" method="get">
-            <input type="text" name="id"value=" <c:out value="${alumno.id}"/>"/>
-            <input type="text" name="nombre" value="<c:out value="${alumno.nombre}"/>"/>
-            <input type="text" name="paterno" value="<c:out value="${alumno.paterno}"/>"/>
-            <input type="text" name="idCarrera" value="<c:out value="${alumno.idCarrera}"/>"/>
-            <input type="submit" value="Actualizar">
-        </form>
-        </fieldset>
+         <button type="button"><a href="login/index.jsp">Regresar</a></button>
+        <div class="container">
+            <fieldset>
+                <form action="AlumnoService?operacion=Guardar" method="post">
+                    <input type="text" name="id" value="<c:out value="${alumno.id}"/>" hidden/>
+                    <input type="text" name="nombre" value="<c:out value="${alumno.nombre}"/>"/>
+                    <input type="text" name="paterno" value="<c:out value="${alumno.paterno}"/>"/>
+                    <input type="text" name="idCarrera" value="<c:out value="${alumno.idCarrera}"/>"/>
+                    <input type="submit" value="Actualizar">
+                </form>
+            </fieldset>
+        </div>
     </body>
 </html>
